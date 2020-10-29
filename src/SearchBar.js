@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
     render() {
+        
         return (
             <div>
                 <form onSubmit={this.props.handlePokebase}>
@@ -20,7 +21,7 @@ export default class SearchBar extends Component {
 
                     <select className="sort-type"
                     onChange={this.props.handleTypeSort}>
-                        <option>Sort by Type</option>
+                        <option value=''>Sort by Type</option>
                         <option value="bug">Bug</option>
                         <option value="fire">Fire</option>
                         <option value="flying">Flying</option>
@@ -29,6 +30,18 @@ export default class SearchBar extends Component {
                         <option value="poison">Poison</option>
                         <option value="water">Water</option>
                         <option></option>
+                    </select>
+
+                    <select className="sort-attack" onChange={this.props.handleAttack}>
+                        <option>Sort by Attack</option>
+                        <option value="asc">Sort High to Low</option>
+                        <option value="desc">Sort Low to High</option>
+                    </select>
+
+                    <select className="sort-health" onChange={this.props.handleHealth}>
+                        <option>Sort by Health</option>
+                        <option value="asc">Sort High to Low</option>
+                        <option value="desc">Sort Low to High</option>
                     </select>
                 </div>
             </div>

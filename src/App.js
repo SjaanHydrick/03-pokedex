@@ -3,13 +3,16 @@ import Header from './Header.js';
 import SearchBar from './SearchBar.js';
 import PokemonList from './PokemonList.js';
 import { pokemonArray } from './pokemon.js';
+import './App.css';
 
 export default class App extends Component {
   state = {
     pokebase: '',
     searchText: '',
     sortName: '',
-    sortType: ''
+    sortType: '',
+    sortAttack: '',
+    sortHealth: ''
   }
 
   handlePokebase = e => {
@@ -37,18 +40,31 @@ export default class App extends Component {
     })
   }
 
+  handleAttack = e => {
+    this.setState({
+      sortAttack: e.target.value
+    })
+  }
+
+  handleHealth = e => {
+    this.setState({
+      sortHealth: e.target.value
+    })
+  }
+
   render() {
     const filteredPokemon = pokemonArray.filter((pokemon) => {
       if (!this.state.pokebase) return true;
       if (pokemon.pokebase.toLowerCase().includes(this.state.pokebase.toLowerCase()))
       return true;
-      if (this.state.sortType === pokemon.type_1){
-        return true;
-      }
-      if (this.state.sortType === pokemon.type_2){
-        return true;
-      }
       return false;
+      })
+      .filter((pokemon) => {
+        if (!this.state.sortType) return true;
+        if (pokemon.type_1 === this.state.sortType) return true;
+        if (pokemon.type_2 === this.state.sortType)
+        return true;
+        return false;
       })
       .sort((a, b) => {
         if (this.state.sortName === "asc"){
@@ -57,13 +73,20 @@ export default class App extends Component {
             return b.pokebase.localeCompare(a.pokebase)}
           })
       .sort((a, b) => {
-          return a.type_1 - b.type_1
+        if (this.state.sortAttack === "asc"){
+          return b.attack - a.attack;
+        } else if (this.state.sortAttack === "desc"){
+          return a.attack - b.attack;
         }
-      )
+      })
       .sort((a, b) => {
-          return a.type_2 - b.type_2
-      })  
-
+        if (this.state.sortHealth === "asc"){
+          return b.hp - a.hp;
+        } else if (this.state.sortHealth === "desc"){
+          return a.hp - b.hp;
+        }
+      })
+      
     return (
       <div className="body">
         <Header />
@@ -71,7 +94,10 @@ export default class App extends Component {
         handlePokebase={this.handlePokebase}
         handleClick={this.handleClick}
         handleNameSort={this.handleNameSort}
-        handleTypeSort={this.handleTypeSort} />
+        handleTypeSort={this.handleTypeSort}
+        handleAttack={this.handleAttack}
+        handleHealth={this.handleHealth}
+         />
         <div className="pokemon-display">
         {
           filteredPokemon.map((pokemonArray, i) =>  

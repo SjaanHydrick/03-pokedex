@@ -4,7 +4,8 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <h1>Oh whaaaaat headers oh man</h1>
+                <h1>PokéDex</h1>
+                <p>Info</p>
             </div>
         )
     }

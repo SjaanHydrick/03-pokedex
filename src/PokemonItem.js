@@ -4,7 +4,6 @@ export default class PokemonItem extends Component {
     render() {
         return (
             <div className={this.props.pokebase}>
-                <p className="info-bar">Info</p>
                 <img className="pokemon-image" src={this.props.url_image} alt={this.props.pokebase} />
                 <h1>{this.props.id} {this.props.pokebase}</h1>
                 <div className="types">
