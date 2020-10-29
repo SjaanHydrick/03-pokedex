@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { Component } from 'react';
 import Header from './Header.js';
 import SearchBar from './SearchBar.js';
