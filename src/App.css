@@ -1,3 +1,129 @@
-img {
+@font-face {
+  font-family: Pokemon;
+  src: url("./fonts/Pokemon\ Classic.ttf");
+}
+
+html {
+  background-color: crimson;
+}
+
+.body {
+  text-align: center;
+}
+
+h1 {
+  font-family: Pokemon;
+  font-size: 40pt;
+  color: white;
+}
+
+.searchbar {
+  height: 25px;
+  width: 300px;
+  font-family: Pokemon;
+}
+
+button {
+  height: 85px;
+  width: 85px;
+  margin-left: 10px;
+  font-family: Pokemon;
+  font-size: 8.5pt;
+  border-radius: 100px;
+  background-color: cornflowerblue;
+  border: solid 4px white;
+}
+
+.dropdowns {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.sort-name {
+  font-family: Pokemon;
+  margin-right: 10px;
+}
+
+.sort-type {
+  font-family: Pokemon;
+  margin-right: 10px;
+}
+
+.sort-attack {
+  font-family: Pokemon;
+  margin-right: 10px;
+}
+
+.sort-health {
+  font-family: Pokemon;
+}
+
+.pokemon-display {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.pokemon-list {
+  width: 420px;
+  padding: 10px;
+  border: solid 5px black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.pokemon-image {
+  float: left;
   width: 150px;
+}
+
+.id {
+  font-family: Pokemon;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 5px;
+  font-family: Pokemon;
+  text-transform: uppercase;
+}
+
+.type1 {
+  font-family: Pokemon;
+  margin-right: 3px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.type2 {
+  font-family: Pokemon;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.height-weight {
+  display: absolute;
+  width: 200px;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 185px;
+  text-align: center;
+  font-family: Pokemon;
+}
+
+.height {
+  font-family: Pokemon;
+  margin: 3px;
+}
+
+.weight {
+  font-family: Pokemon;
+  margin: 3px;
+}
+
+.description {
+  position: relative;
+  font-family: Pokemon;
+  bottom: 0;
 }

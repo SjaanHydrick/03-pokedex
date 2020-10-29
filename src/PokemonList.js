@@ -5,7 +5,7 @@ export default class PokemonList extends Component {
     render() {
         const pokemon = this.props.pokemonArray;
         return (
-            <div>
+            <div className="pokemon-list">
                 <PokemonItem 
                 pokebase={pokemon.pokebase}
                 url_image={pokemon.url_image}
@@ -15,6 +15,8 @@ export default class PokemonList extends Component {
                 height={pokemon.height}
                 weight={pokemon.weight}
                 pokedex={pokemon.pokedex}
+                color_1={pokemon.color_1}
+                color_2={pokemon.color_2}
                 />
             </div>
         )

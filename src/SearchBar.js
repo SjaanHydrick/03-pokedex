@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 
 export default class SearchBar extends Component {
     render() {
-        
+
         return (
             <div>
                 <form onSubmit={this.props.handlePokebase}>
                     <input className="searchbar"
                     type="text"
                     onChange={this.props.handleClick} />
-                    <button>Submit</button>
+                    <button>Search</button>
                 </form>
 
                 <div className="dropdowns">
