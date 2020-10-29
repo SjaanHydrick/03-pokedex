@@ -1,3 +1,1 @@
-#Planning Board
-
-(./assets/MiroBoard.png)
+![Miro Board](MiroBoard.png)
