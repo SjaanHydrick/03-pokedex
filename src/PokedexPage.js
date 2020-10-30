@@ -9,7 +9,8 @@ import './App.css';
 export default class App extends Component {
   state = {
     pokemon: [],
-    searchText: ''
+    searchText: '',
+    sortType: ''
   }
 
   componentDidMount = async () => {
@@ -41,9 +42,12 @@ export default class App extends Component {
   //   })
   // }
 
-  // handleTypeSort = e => {
+  // handleTypeSort = async (e) => {
+  //   const type = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.state.searchText}&type=${this.state.sortType}
+  //   `)
   //   this.setState({
-  //     sortType: e.target.value
+  //     sortType: e.target.value,
+  //     pokemon: type.body.results
   //   })
   // }
 
@@ -95,7 +99,7 @@ export default class App extends Component {
          <div className="pokemon-display">
         {
           this.state.pokemon.length === 0
-          ? <img src="/poke-gif.gif" alt="loading..." />
+          ? <img className="loading" src="/poke-gif.gif" alt="loading..." />
 
           : this.state.pokemon.map(pokemon =>  
             <div key={pokemon.pokemon}>
