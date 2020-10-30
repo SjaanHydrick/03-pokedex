@@ -31,70 +31,96 @@ export default class PokedexPage extends Component {
 
   handleClick = async (e) => {
       e.preventDefault()
+      const type = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}`)
+
+      this.setState({ pokemon: type.body.results })
+  }
+
+  handleNameSort = async (e) => {
+    if(e.target.value === "asc"){
+      const nameAsc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=pokemon&direction=asc`)
+
+      this.setState({ 
+        pokemon: nameAsc.body.results 
+      })
+    } else if(e.target.value === "desc"){
+      const nameDesc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=pokemon&direction=desc`)
+      this.setState({
+        pokemon: nameDesc.body.results
+      })
+    } else {
       const items = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}`)
 
       this.setState({ pokemon: items.body.results })
+    }
+    }
+
+  handleTypeSort = async (e) => {
+    if(e.target.value === ''){
+      const items = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}`)
+
+      this.setState({ 
+        pokemon: items.body.results 
+      })
+    }
+    else{
+    const type = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&type=${e.target.value}
+    `)
+    this.setState({
+      pokemon: type.body.results
+    })
+    }
   }
 
-  // handleNameSort = e => {
-  //   this.setState({
-  //     sortName: e.target.value
-  //   })
-  // }
+  handleAttack = async (e) => {
+    if(e.target.value === "asc"){
+      const attackAsc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=attack&direction=asc`)
 
-  // handleTypeSort = async (e) => {
-  //   const type = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?${this.state.searchText}&type=${this.state.sortType}
-  //   `)
-  //   this.setState({
-  //     sortType: e.target.value,
-  //     pokemon: type.body.results
-  //   })
-  // }
+      this.setState({ 
+        pokemon: attackAsc.body.results 
+      })
+    } else if(e.target.value === "desc"){
+      const attackDesc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=attack&direction=desc`)
+      this.setState({
+        pokemon: attackDesc.body.results
+      })
+    } else {
+      const items = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}`)
 
-  // handleAttack = e => {
-  //   this.setState({
-  //     sortAttack: e.target.value
-  //   })
-  // }
+      this.setState({ pokemon: items.body.results })
+    }
+  }
 
-  // handleHealth = e => {
-  //   this.setState({
-  //     sortHealth: e.target.value
-  //   })
-  // }
+  handleHealth = async (e) => {
+    if(e.target.value === "asc"){
+      const healthAsc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=hp&direction=asc`)
 
-  render() {
-    //   .sort((a, b) => {
-    //     if (this.state.sortName === "asc"){
-    //         return a.pokebase.localeCompare(b.pokebase); 
-    //     } else if (this.state.sortName === "desc") {
-    //         return b.pokebase.localeCompare(a.pokebase)}
-    //       })
-    //   .sort((a, b) => {
-    //     if (this.state.sortAttack === "asc"){
-    //       return b.attack - a.attack;
-    //     } else if (this.state.sortAttack === "desc"){
-    //       return a.attack - b.attack;
-    //     }
-    //   })
-    //   .sort((a, b) => {
-    //     if (this.state.sortHealth === "asc"){
-    //       return b.hp - a.hp;
-    //     } else if (this.state.sortHealth === "desc"){
-    //       return a.hp - b.hp;
-    //     }
-    //   })
-      
+      this.setState({ 
+        pokemon: healthAsc.body.results 
+      })
+    } else if(e.target.value === "desc"){
+      const healthDesc = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}&sort=hp&direction=desc`)
+      this.setState({
+        pokemon: healthDesc.body.results
+      })
+    } else {
+      const items = await fetch.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${this.state.searchText}`)
+
+      this.setState({ pokemon: items.body.results })
+    }
+  }
+
+  render() {      
     return (
       <div className="body">
         <Header />
         <SearchBar 
         handlePokebase={this.handlePokebase}
         handleClick={this.handleClick}
-        // handleNameSort={this.handleNameSort}
-        // handleTypeSort={this.handleTypeSort}
-        // handleAttack={this.handleAttack}
-        // handleHealth={this.handleHealth}
+        handleNameSort={this.handleNameSort}
+        handleTypeSort={this.handleTypeSort}
+        handleAttack={this.handleAttack}
+        handleHealth={this.handleHealth}
          />
          <div className="pokemon-display">
         {
