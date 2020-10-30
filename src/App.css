@@ -11,6 +11,9 @@ html {
 
 .pokedex-button {
   margin-top: 150px;
+  border: ridge 2px cyan;
+  border-radius: 300px;
+  animation: glow 6s infinite;
 }
 
 .loading {
@@ -146,4 +149,22 @@ h2 {
 .speed {
   font-family: Pokemon;
   margin: 5px;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 10px 10px 50px cyan;
+    width: 500px;
+  }
+
+  50% {
+    box-shadow: 0px 0px 300px cyan;
+    width: 510px;
+  }
+
+  100% {
+    box-shadow: 10px 10px 50px cyan;
+    width: 500px;
+  }
+
 }
