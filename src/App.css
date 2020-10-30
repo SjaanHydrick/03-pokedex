@@ -5,6 +5,17 @@
 
 html {
   background-color: crimson;
+  font-family: Pokemon;
+  text-align: center;
+}
+
+.pokedex-button {
+  margin-top: 150px;
+}
+
+.loading {
+  float: left;
+  margin-left: 200px;
 }
 
 .body {
@@ -15,6 +26,11 @@ h1 {
   font-family: Pokemon;
   font-size: 40pt;
   color: white;
+}
+
+.id {
+  margin-top: 10px;
+  font-size: 20pt;
 }
 
 .searchbar {
@@ -102,28 +118,31 @@ h2 {
   border-radius: 10px;
 }
 
-.height-weight {
-  display: absolute;
-  width: 200px;
+.hp {
+  font-family: Pokemon;;
+}
+
+.attack-defense {
+  width: 450px;
   padding: 0;
+  margin-left: -10px;
   margin-top: 20px;
-  margin-left: 185px;
   text-align: center;
   font-family: Pokemon;
+  font-size: 10pt;
 }
 
-.height {
+.attack {
   font-family: Pokemon;
-  margin: 3px;
+  margin: 5px;
 }
 
-.weight {
+.defense {
   font-family: Pokemon;
-  margin: 3px;
+  margin: 5px;
 }
 
-.description {
-  position: relative;
+.speed {
   font-family: Pokemon;
-  bottom: 0;
+  margin: 5px;
 }

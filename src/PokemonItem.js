@@ -12,15 +12,19 @@ export default class PokemonItem extends Component {
                     <span className="type1" style={{ backgroundColor: this.props.color_1}}>{this.props.type_1}</span>
                     <span className="type2" style={{ backgroundColor: this.props.color_2}}>{this.props.type_2}</span>
                 </div>
-                <div className="height-weight">
-                    <p className="height">
-                        {this.props.height} feet
-                    </p>
-                    <p className="weight">
-                        {this.props.weight} lbs
-                    </p>
+                <p className="hp">HP: {this.props.attack}
+                </p>
+                <div className="attack-defense">
+                    <span className="attack">
+                        Attack: {this.props.attack}
+                    </span>
+                    <span className="defense">
+                        Defense: {this.props.defense}
+                    </span>
+                    <span className="speed">
+                        Speed: {this.props.speed}
+                    </span>
                 </div> 
-                <p className="description">{this.props.pokedex}</p>
             </div>
         )
     }
