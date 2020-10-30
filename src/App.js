@@ -16,14 +16,8 @@ export default class App extends Component {
                     <Switch>
                         <Route 
                         path = "/" 
-                        exact render={(routerProps) => <LandingPage {...routerProps} 
-                        />}
+                        exact render={(routerProps) => <LandingPage {...routerProps} />}
                         />
-                    </Switch>
-                </Router>
-
-                <Router>
-                    <Switch>
                         <Route path = "/pokemon" exact render={(routerProps) => <PokedexPage {...routerProps} />}
                         />
                     </Switch>
