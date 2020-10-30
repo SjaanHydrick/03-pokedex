@@ -6,7 +6,7 @@ import PokemonList from './PokemonList.js';
 import fetch from 'superagent';
 import './App.css';
 
-export default class App extends Component {
+export default class PokedexPage extends Component {
   state = {
     pokemon: [],
     searchText: '',
