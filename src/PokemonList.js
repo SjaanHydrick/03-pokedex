@@ -3,20 +3,20 @@ import PokemonItem from './PokemonItem.js'
 
 export default class PokemonList extends Component {
     render() {
-        const pokemon = this.props.pokemonArray;
         return (
             <div className="pokemon-list">
                 <PokemonItem 
-                pokebase={pokemon.pokebase}
-                url_image={pokemon.url_image}
-                id={pokemon.id}
-                type_1={pokemon.type_1}
-                type_2={pokemon.type_2}
-                height={pokemon.height}
-                weight={pokemon.weight}
-                pokedex={pokemon.pokedex}
-                color_1={pokemon.color_1}
-                color_2={pokemon.color_2}
+                pokebase={this.props.pokemon.pokebase}
+                url_image={this.props.pokemon.url_image}
+                id={this.props.pokemon.id}
+                type_1={this.props.pokemon.type_1}
+                type_2={this.props.pokemon.type_2}
+                hp={this.props.pokemon.hp}
+                attack={this.props.pokemon.attack}
+                defense={this.props.pokemon.defense}
+                speed={this.props.pokemon.speed}
+                color_1={this.props.pokemon.color_1}
+                color_2={this.props.pokemon.color_2}
                 />
             </div>
         )
