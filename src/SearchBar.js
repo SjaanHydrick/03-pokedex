@@ -16,17 +16,16 @@ export default class SearchBar extends Component {
                 </form>
 
                 <div className="dropdowns">
+
                     <select className="sort-name" 
-                    // onChange={this.props.handleNameSort}
-                    >
+                    onChange={this.props.handleNameSort}>
                         <option>Sort by Name</option>
                         <option value="asc">Sort A - Z</option>
                         <option value="desc">Sort Z - A</option>
                     </select>
 
                     <select className="sort-type"
-                    // onChange={this.props.handleTypeSort}
-                    >
+                    onChange={this.props.handleTypeSort}>
                         <option value=''>Sort by Type</option>
                         <option value="bug">Bug</option>
                         <option value="fire">Fire</option>
@@ -38,21 +37,20 @@ export default class SearchBar extends Component {
                         <option></option>
                     </select>
 
-                    <select className="sort-attack"
-                    //  onChange={this.props.handleAttack}
-                     >
-                        <option>Sort by Attack</option>
-                        <option value="asc">Sort High to Low</option>
-                        <option value="desc">Sort Low to High</option>
-                    </select>
-
                     <select className="sort-health" 
-                    // onChange={this.props.handleHealth}
-                    >
+                    onChange={this.props.handleHealth}>
                         <option>Sort by Health</option>
                         <option value="asc">Sort High to Low</option>
                         <option value="desc">Sort Low to High</option>
                     </select>
+                    
+                    <select className="sort-attack"
+                     onChange={this.props.handleAttack}>
+                        <option>Sort by Attack</option>
+                        <option value="desc">Sort High to Low</option>
+                        <option value="asc">Sort Low to High</option>
+                    </select>
+
                 </div>
             </div>
         )
