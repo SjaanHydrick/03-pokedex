@@ -5,7 +5,6 @@
 
 html {
   background-color: crimson;
-  font-family: Pokemon;
   text-align: center;
 }
 
@@ -23,6 +22,7 @@ html {
 
 .body {
   text-align: center;
+  margin-bottom: 70px;
 }
 
 h1 {
@@ -42,7 +42,7 @@ h1 {
   font-family: Pokemon;
 }
 
-button {
+.search {
   height: 85px;
   width: 85px;
   margin-left: 10px;
@@ -58,24 +58,72 @@ button {
   margin-bottom: 40px;
 }
 
-.sort-name {
+.pokemon {
   font-family: Pokemon;
   margin-right: 10px;
 }
 
-.sort-type {
+.link-id {
+  text-decoration: none;
+  color: black;
+}
+
+.type {
   font-family: Pokemon;
   margin-right: 10px;
 }
 
-.sort-attack {
+.attack {
   font-family: Pokemon;
   margin-right: 10px;
 }
 
-.sort-health {
+.hp {
   font-family: Pokemon;
   margin-right: 10px;
+}
+
+.beginning {
+  margin-right: 5px;
+  width: 100px;
+  height: 20px;
+  font-family: Pokemon;
+  font-size: 7pt;
+  background-color: red;
+  border: inset 1px black;
+}
+
+.previous {
+  margin-right: 5px;
+  width: 100px;
+  height: 30px;
+  font-family: Pokemon;
+  font-size: 8pt;
+  background-color: red;
+  border: inset 1px black;
+}
+
+.next {
+  margin-right: 5px;
+  width: 100px;
+  height: 30px;
+  font-family: Pokemon;
+  font-size: 8pt;
+  background-color: green;
+  border: inset 1px black;
+}
+
+.end {
+  width: 100px;
+  height: 20px;
+  font-family: Pokemon;
+  font-size: 7pt;
+  background-color: green;
+  border: inset 1px black;
+}
+
+.page-count {
+  font-family: Pokemon;
 }
 
 .pokemon-display {
@@ -87,10 +135,17 @@ button {
 
 .pokemon-list {
   width: 420px;
+  height: 185px;
   padding: 10px;
   border: solid 5px black;
   border-radius: 15px;
   background-color: white;
+}
+
+.pokemon-list:hover {
+  background-color: palegreen;
+  transform: scale(1.04);
+  transition-duration: 3s;
 }
 
 .pokemon-image {
@@ -109,6 +164,10 @@ h2 {
   text-transform: uppercase;
 }
 
+.types{
+  margin-bottom: 25px;
+}
+
 .type1 {
   font-family: Pokemon;
   margin-right: 3px;
@@ -122,49 +181,52 @@ h2 {
   border-radius: 10px;
 }
 
-.hp {
-  font-family: Pokemon;;
+.back-button {
+  margin-bottom: 40px;
+  height: 85px;
+  width: 85px;
+  font-family: Pokemon;
+  font-size: 8.5pt;
+  border-radius: 100px;
+  background-color: cornflowerblue;
+  border: solid 4px white;
+
 }
 
-.attack-defense {
-  width: 450px;
-  padding: 0;
-  margin-left: -10px;
-  margin-top: 20px;
-  text-align: center;
+.pokemon-detail {
+  position: inline;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  width: 400px;
   font-family: Pokemon;
-  font-size: 10pt;
+  background-color: white;
+  border: solid 5px black;
+  border-radius: 20px;
 }
 
-.attack {
-  font-family: Pokemon;
-  margin: 5px;
+.detail-img {
+  width: 300px;
+  margin-bottom: 0;
 }
 
-.defense {
-  font-family: Pokemon;
-  margin: 5px;
-}
-
-.speed {
-  font-family: Pokemon;
-  margin: 5px;
+.detail-id {
+  font-size: 18pt;
+  color: black;
+  margin-top: 0;
 }
 
 @keyframes glow {
   0% {
     box-shadow: 10px 10px 50px cyan;
-    width: 500px;
   }
 
   50% {
     box-shadow: 0px 0px 300px cyan;
-    width: 510px;
+    transform: scale(1.04);
   }
 
   100% {
     box-shadow: 10px 10px 50px cyan;
-    width: 500px;
   }
-
 }
